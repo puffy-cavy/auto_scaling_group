@@ -52,7 +52,7 @@ pipeline{
 					export DESIRED_CAPACITY="\${DESIRED_CAPACITY}"
 					export MIN_SIZE="\${MIN_SIZE}"
 					export MAX_SIZE="\${MAX_SIZE}"
-					source jenkins_bash.sh'''
+					source test.sh'''
 
 					}
 
