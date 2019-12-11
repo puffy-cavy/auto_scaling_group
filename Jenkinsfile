@@ -21,11 +21,12 @@ pipeline{
 					}
 				}
 			}
-		}
 
-	stage('QA'){
-		steps{
-			sh "echo [QA STAGE]"
+
+		stage('QA'){
+			steps{
+				sh "echo [QA STAGE]"
+			}
 		}
 	}
 }
