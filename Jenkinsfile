@@ -16,7 +16,7 @@ pipeline{
 						throw e
 						}
 					FULL_STACK_NAME = 'aws cloudformation describe-stacks --query \'Stacks[*].[StackName]\' --output text | grep -m 1 $stackName'
-					
+					sh "aws cloudformation list-stack-resources --stack-name $fullStackName --query 'StackResourceSummaries[*].{ResourceType: ResourceType,PhysicalId: PhysicalResourceId, Status: ResourceStatus, LastUpdated: LastUpdatedTimestamp}'"
 
 					}
 				}
