@@ -49,6 +49,10 @@ pipeline{
 						}
 
 					}
+					sh "export STACK_NAME"
+					sh "export DESIRED_CAPACITY"
+					sh "export MIN_SIZE"
+					sh "export MAX_SIZE"
 					sh """STACK_NAME=${STACK_NAME}"""
 					sh """DESIRED_CAPACITY=${DESIRED_CAPACITY}"""
 					sh """MIN_SIZE=${MIN_SIZE}"""
