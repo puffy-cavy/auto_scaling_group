@@ -47,7 +47,7 @@ pipeline{
 						throw e
 						}
 
-					sh "echo ${STACK_NAME}"
+					sh "export ${STACK_NAME}"
 					sh '''
 					export DESIRED_CAPACITY="\${DESIRED_CAPACITY}"
 					export MIN_SIZE="\${MIN_SIZE}"
