@@ -52,7 +52,7 @@ pipeline{
 					export DESIRED_CAPACITY="\${DESIRED_CAPACITY}"
 					export MIN_SIZE="\${MIN_SIZE}"
 					export MAX_SIZE="\${MAX_SIZE}"
-					echo '''+STACK_NAMEE'''
+					echo $STACK_NAMEE
 					source test.sh'''
 
 					}
