@@ -48,10 +48,10 @@ pipeline{
 						throw e
 						}
 
-					sh "STACK_NAME=${STACK_NAME}"
-					sh "DESIRED_CAPACITY=${DESIRED_CAPACITY}"
-					sh "MIN_SIZE=${MIN_SIZE}"
-					sh "MAX_SIZE=${MAX_SIZE}"
+					sh """STACK_NAME=${STACK_NAME}"""
+					sh """DESIRED_CAPACITY=${DESIRED_CAPACITY}"""
+					sh """MIN_SIZE=${MIN_SIZE}"""
+					sh """MAX_SIZE=${MAX_SIZE}"""
 					sh "source jenkins_bash.sh" 
 
 					}
