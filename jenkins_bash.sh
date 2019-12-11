@@ -2,6 +2,11 @@
 
 export PATH=/usr/local/bin:$PATH
 
+export STACK_NAME
+export MIN_SIZE
+export MAX_SIZE
+export DESIRED_CAPACITY
+
 fullStackName=`aws cloudformation describe-stacks --query 'Stacks[*].[StackName]' --output text | grep -m 1 $STACK_NAME`
 aws cloudformation list-stack-resources --stack-name $fullStackName --query 'StackResourceSummaries[*].{ResourceType: ResourceType,PhysicalId: PhysicalResourceId, Status: ResourceStatus, LastUpdated: LastUpdatedTimestamp}'
 groupName=`aws cloudformation list-stack-resources --stack-name $fullStackName --query 'StackResourceSummaries[*].[ResourceType,PhysicalResourceId]' --output text | grep AWS::AutoScaling::AutoScalingGroup | awk '{print $2}'`
