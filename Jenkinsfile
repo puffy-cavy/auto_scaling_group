@@ -15,7 +15,7 @@ pipeline{
 						echo('Skipping Updating Autoscaling group')
 						throw e
 						}
-					FULL_STACK_NAME = 'aws cloudformation describe-stacks --query 'Stacks[*].[StackName]' --output text | grep -m 1 $stackName'
+					FULL_STACK_NAME = 'aws cloudformation describe-stacks --query \'Stacks[*].[StackName]\' --output text | grep -m 1 $stackName'
 					
 
 					}
