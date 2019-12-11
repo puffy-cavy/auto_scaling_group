@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 echo ${STACK_NAME}
