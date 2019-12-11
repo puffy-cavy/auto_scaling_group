@@ -1,14 +1,13 @@
-def STACK_NAME
-def DESIRED_CAPACITY
-def MIN_SIZE
-def MAX_SIZE
-
 pipeline{
 	agent any
 	stages {
 		stage('DEV'){
 			steps{
 				script{
+					def STACK_NAME
+					def DESIRED_CAPACITY
+					def MIN_SIZE
+					def MAX_SIZE
 					try{
 						timeout(time: 5, unit: 'MINUTES'){
 							STACK_NAME = input(id: 'stackName', message: 'Input stack name you want to query on', parameters: [[$class: 'TextParameterDefinition', defaultValue: '', description: '', name: '']])
@@ -52,7 +51,7 @@ pipeline{
 					export DESIRED_CAPACITY="\${DESIRED_CAPACITY}"
 					export MIN_SIZE="\${MIN_SIZE}"
 					export MAX_SIZE="\${MAX_SIZE}"
-					echo $STACK_NAMEE
+					echo ${STACK_NAME}
 					source test.sh'''
 
 					}
