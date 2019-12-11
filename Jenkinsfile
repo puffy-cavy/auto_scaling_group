@@ -12,7 +12,6 @@ pipeline{
 						timeout(time: 5, unit: 'MINUTES'){
 							STACK_NAME = input(id: 'stackName', message: 'Input stack name you want to query on', parameters: [[$class: 'TextParameterDefinition', defaultValue: '', description: '', name: '']])
 							}
-							sh "echo ${STACK_NAME}"
 						}
 					catch(e){
 						echo('Skipping Updating Autoscaling group')
@@ -47,7 +46,8 @@ pipeline{
 						echo('Skipping Updating Autoscaling group')
 						throw e
 						}
-					def STACK_NAMEE = "${STACK_NAME}"	
+
+					sh "echo ${STACK_NAME}"
 					sh '''
 					export DESIRED_CAPACITY="\${DESIRED_CAPACITY}"
 					export MIN_SIZE="\${MIN_SIZE}"
