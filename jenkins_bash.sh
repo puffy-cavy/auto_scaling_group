@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 fullStackName=`aws cloudformation describe-stacks --query 'Stacks[*].[StackName]' --output text | grep -m 1 ${STACK_NAME}`
 aws cloudformation list-stack-resources --stack-name $fullStackName --query 'StackResourceSummaries[*].{ResourceType: ResourceType,PhysicalId: PhysicalResourceId, Status: ResourceStatus, LastUpdated: LastUpdatedTimestamp}'
