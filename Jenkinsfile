@@ -47,11 +47,11 @@ pipeline{
 						echo('Skipping Updating Autoscaling group')
 						throw e
 						}
-					sh '''#!/bin/bash
-					export STACK_NAME="${STACK_NAME}"
-					export DESIRED_CAPACITY="${DESIRED_CAPACITY}"
-					export MIN_SIZE="${MIN_SIZE}"
-					export MAX_SIZE="${MAX_SIZE}"
+					sh '''#!/usr/bin/env bash
+					STACK_NAME="\${STACK_NAME}"
+					DESIRED_CAPACITY="\${DESIRED_CAPACITY}"
+					MIN_SIZE="\${MIN_SIZE}"
+					MAX_SIZE="\${MAX_SIZE}"
 					source jenkins_bash.sh'''
 
 					}
