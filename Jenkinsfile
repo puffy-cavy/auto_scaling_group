@@ -47,12 +47,7 @@ pipeline{
 						throw e
 						}
 
-					sh "export ${STACK_NAME}"
-					sh '''
-					export DESIRED_CAPACITY="\${DESIRED_CAPACITY}"
-					export MIN_SIZE="\${MIN_SIZE}"
-					export MAX_SIZE="\${MAX_SIZE}"
-					source test.sh'''
+					sh 'test.sh'
 
 					}
 
