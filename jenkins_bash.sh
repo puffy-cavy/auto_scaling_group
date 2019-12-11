@@ -1,11 +1,7 @@
-
+#!/usr/bin/env bash
 
 export PATH=/usr/local/bin:$PATH
 
-export STACK_NAME
-export MIN_SIZE
-export MAX_SIZE
-export DESIRED_CAPACITY
 
 echo ${STACK_NAME}
 fullStackName=`aws cloudformation describe-stacks --query 'Stacks[*].[StackName]' --output text | grep -m 1 ${STACK_NAME}`
