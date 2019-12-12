@@ -47,7 +47,7 @@ pipeline{
 						throw e
 						}
 
-					sh 'test.sh'
+					sh "test.sh"
 
 					}
 
