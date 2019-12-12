@@ -47,7 +47,7 @@ pipeline{
 						throw e
 						}
 
-					sh "source test.sh"
+					sh "echo ${STACK_NAME}"
 
 					}
 
