@@ -1,13 +1,13 @@
+def STACK_NAME
+def DESIRED_CAPACITY
+def MIN_SIZE
+def MAX_SIZE
 pipeline{
 	agent any
 	stages {
 		stage('DEV'){
 			steps{
 				script{
-					def STACK_NAME
-					def DESIRED_CAPACITY
-					def MIN_SIZE
-					def MAX_SIZE
 					try{
 						timeout(time: 5, unit: 'MINUTES'){
 							STACK_NAME = input(id: 'stackName', message: 'Input stack name you want to query on', parameters: [[$class: 'TextParameterDefinition', defaultValue: '', description: '', name: '']])
