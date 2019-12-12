@@ -47,7 +47,7 @@ pipeline{
 						throw e
 						}
 					sh "export STACK_NAME"
-					sh "source test.sh"
+					sh "test.sh"
 
 					}
 
