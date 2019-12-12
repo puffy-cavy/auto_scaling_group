@@ -46,7 +46,7 @@ pipeline{
 						echo('Skipping Updating Autoscaling group')
 						throw e
 						}
-
+					sh "export STACK_NAME"
 					sh "source test.sh"
 
 					}
