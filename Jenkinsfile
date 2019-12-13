@@ -47,7 +47,7 @@ pipeline{
 						echo('Skipping Updating Autoscaling group')
 						throw e
 						}
-					env.STACK_NAME_TEST = "${STACK_NAME}"
+					env.STACK_NAME = "${STACK_NAME}"
 					sh "source test.sh"
 
 					}
