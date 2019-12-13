@@ -48,7 +48,10 @@ pipeline{
 						throw e
 						}
 					env.STACK_NAME = "${STACK_NAME}"
-					sh "source test.sh"
+					env.DESIRED_CAPACITY = "${DESIRED_CAPACITY}"
+					env.MIN_SIZE = "${MIN_SIZE}"
+					env.MAX_SIZE = "${MAX_SIZE}"
+					sh "source jenkins_bash.sh"
 
 					}
 
