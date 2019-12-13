@@ -1,3 +1,3 @@
+#!/usr/bin/env bash
 
-
-echo ${STACK_NAME}
+echo ${STACK_NAME_TEST}

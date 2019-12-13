@@ -2,6 +2,7 @@ def STACK_NAME
 def DESIRED_CAPACITY
 def MIN_SIZE
 def MAX_SIZE
+
 pipeline{
 	agent any
 	stages {
@@ -46,8 +47,8 @@ pipeline{
 						echo('Skipping Updating Autoscaling group')
 						throw e
 						}
-					sh "export STACK_NAME"
-					sh "test.sh"
+					env.STACK_NAME_TEST = ${STACK_NAME}
+					sh "source test.sh"
 
 					}
 
